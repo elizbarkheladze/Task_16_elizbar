@@ -13,6 +13,9 @@
 		2D905291287D77D30054B905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D90528F287D77D30054B905 /* Main.storyboard */; };
 		2D905293287D77D60054B905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D905292287D77D60054B905 /* Assets.xcassets */; };
 		2D905296287D77D60054B905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D905294287D77D60054B905 /* LaunchScreen.storyboard */; };
+		2D90529E287D7ADD0054B905 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90529D287D7ADD0054B905 /* DetailsVC.swift */; };
+		2D9052A9287D85610054B905 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9052A7287D85610054B905 /* FilmCell.swift */; };
+		2D9052AA287D85610054B905 /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9052A8287D85610054B905 /* FilmCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		2D905292287D77D60054B905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D905295287D77D60054B905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D905297287D77D60054B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D90529D287D7ADD0054B905 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		2D9052A7287D85610054B905 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		2D9052A8287D85610054B905 /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		2D905288287D77D30054B905 /* Task_15_elizbar */ = {
 			isa = PBXGroup;
 			children = (
+				2D9052A6287D85440054B905 /* customcell */,
 				2D905289287D77D30054B905 /* AppDelegate.swift */,
 				2D90528B287D77D30054B905 /* SceneDelegate.swift */,
 				2D90528D287D77D30054B905 /* ViewController.swift */,
@@ -63,8 +70,18 @@
 				2D905292287D77D60054B905 /* Assets.xcassets */,
 				2D905294287D77D60054B905 /* LaunchScreen.storyboard */,
 				2D905297287D77D60054B905 /* Info.plist */,
+				2D90529D287D7ADD0054B905 /* DetailsVC.swift */,
 			);
 			path = Task_15_elizbar;
+			sourceTree = "<group>";
+		};
+		2D9052A6287D85440054B905 /* customcell */ = {
+			isa = PBXGroup;
+			children = (
+				2D9052A7287D85610054B905 /* FilmCell.swift */,
+				2D9052A8287D85610054B905 /* FilmCell.xib */,
+			);
+			path = customcell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D905296287D77D60054B905 /* LaunchScreen.storyboard in Resources */,
+				2D9052AA287D85610054B905 /* FilmCell.xib in Resources */,
 				2D905293287D77D60054B905 /* Assets.xcassets in Resources */,
 				2D905291287D77D30054B905 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D90528E287D77D30054B905 /* ViewController.swift in Sources */,
+				2D90529E287D7ADD0054B905 /* DetailsVC.swift in Sources */,
 				2D90528A287D77D30054B905 /* AppDelegate.swift in Sources */,
 				2D90528C287D77D30054B905 /* SceneDelegate.swift in Sources */,
+				2D9052A9287D85610054B905 /* FilmCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
