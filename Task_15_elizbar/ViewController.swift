@@ -44,9 +44,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         moviesTableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
+        
     }
-    
-    @IBAction func segmentselectedBtn(_ sender: UISegmentedControl) {
+    func sortData(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
             movies.sort(by: {$0.isFavourite && !$1.isFavourite})
@@ -58,6 +58,9 @@ class ViewController: UIViewController {
             print("ragac ar wavida sworad :///")
         }
         moviesTableView.reloadData()
+    }
+    @IBAction func segmentselectedBtn(_ sender: UISegmentedControl) {
+        sortData(sender: sender)
     }
     
 }
@@ -100,16 +103,30 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let givenFilm = movies[indexPath.row]
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
-        guard let vc = vc else { return }
-        vc.givenMovie = givenFilm
-        vc.delegate = self
-        if givenFilm.isFavourite == true {
-            vc.favouriteButtonImageaddress = "heart.fill"
+        if indexPath.section == 0 {
+            let givenFilm = movies.filter({$0.seen == false})[indexPath.row]
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
+            guard let vc = vc else { return }
+            vc.givenMovie = givenFilm
+            vc.delegate = self
+            if givenFilm.isFavourite == true {
+                vc.favouriteButtonImageaddress = "heart.fill"
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let givenFilm = movies.filter({$0.seen == true})[indexPath.row]
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
+            guard let vc = vc else { return }
+            vc.givenMovie = givenFilm
+            vc.delegate = self
+            if givenFilm.isFavourite == true {
+                vc.favouriteButtonImageaddress = "heart.fill"
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
         
     
@@ -122,7 +139,7 @@ extension ViewController : filmseenDelegate, DetailsDelegate {
         } else {
             movies[movies.firstIndex(where: {$0.title == movie.title})!].isFavourite = true
         }
-        moviesTableView.reloadData()
+        
     }
     
     func seenButtonClicked(cell: FilmCell) {
