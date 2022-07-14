@@ -2,7 +2,7 @@
 //  CustomColCell.swift
 //  Task_15_elizbar
 //
-//  Created by alta on 7/14/22.
+//  Created by altaa on 7/14/22.
 //
 
 import UIKit
